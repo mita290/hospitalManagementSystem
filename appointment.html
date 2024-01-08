@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+
+    <link rel="stylesheet" href="stylesApp.css">
+</head>
+<body>
+    <a href="home.html" class="home-button">Home</a>
+    <h1>Appointment Booking</h1>
+    <form id="appointmentForm">
+        <label for="patientName">Name:</label>
+        <input type="text" id="patientName" required>
+
+        <label for="contactInfo">Contact Information:</label>
+        <input type="text" id="contactInfo" required>
+
+        <label for="preferredDate">Preferred Date:</label>
+        <input type="date" id="preferredDate" required>
+
+        <label for="preferredTime">Preferred Time:</label>
+        <input type="time" id="preferredTime" required>
+
+        <label for="doctor">Preferred Doctor:</label>
+        <select id="doctor">
+            <option value="drSmith">Dr. Smith</option>
+            <option value="drJones">Dr. Jones</option>
+        </select>
+
+        <label for="appointmentReason">Reason for Appointment:</label>
+        <textarea id="appointmentReason" rows="4" required></textarea>
+
+        <label for="additionalNotes">Additional Notes:</label>
+        <textarea id="additionalNotes" rows="4"></textarea>
+
+        <button type="button" onclick="submitAppointment()">Submit Appointment</button>
+    </form>
+
+    
+</body>
+</html>

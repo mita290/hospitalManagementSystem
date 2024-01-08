@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+background-image: url('https://healthnewshub.org/wp-content/uploads/2023/03/Heart-Rate-Health.jpg'); /* Add your image path here */
+  background-size: cover; /* Adjust the image size */
+  background-repeat: no-repeat;
+
+}
+
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 600px;
+  top: 0;
+  left: 0;
+  background-color:#009999;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+  transition: 0.3s;
+}
+.logo-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+.logo-container img{
+width:100px;
+border-radius:50px;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #009999;
+  color: white;
+  padding: 10px 15px;
+border-radius:10px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+p{
+color:#009999;
+font-family:times new roman;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="patient_registration.html">Patient Registration</a>
+  <a href="appointment.html">Book Appointment</a>
+  <a href="#">Doctors</a>
+
+</div>
+<div class="logo-container">
+<img src="https://t4.ftcdn.net/jpg/04/93/07/85/240_F_493078529_h5qOJQUZPpSn8gVIK2QfvD7JJILUK7aL.jpg">
+<p>M^2H HOSPITAL</p>
+</div>
+
+
+<button class="openbtn" id="toggleBtn" onclick="toggleNav()">☰ </button>
+
+<script>
+function toggleNav() {
+  var sidepanel = document.getElementById("mySidepanel");
+  var toggleBtn = document.getElementById("toggleBtn");
+
+  if (sidepanel.style.width === "250px") {
+    sidepanel.style.width = "0";
+  } else {
+    sidepanel.style.width = "250px";
+  }
+  
+  // Change the button icon/text depending on the side panel state
+  toggleBtn.innerHTML = (sidepanel.style.width === "250px") ? '× Close Sidepanel' : '☰';
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+  document.getElementById("toggleBtn").innerHTML = '☰';
+}
+
+// Close the panel if clicked outside the panel
+document.addEventListener('click', function(event) {
+  var sidepanel = document.getElementById("mySidepanel");
+  var toggleBtn = document.getElementById("toggleBtn");
+
+  if (event.target !== sidepanel && event.target !== toggleBtn) {
+    if (sidepanel.style.width === "250px") {
+      sidepanel.style.width = "0";
+      toggleBtn.innerHTML = '☰';
+    }
+  }
+});
+</script>
+   
+</body>
+</html>
